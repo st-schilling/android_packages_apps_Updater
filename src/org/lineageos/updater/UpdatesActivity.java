@@ -317,7 +317,7 @@ public class UpdatesActivity extends UpdatesListActivity {
                 Log.e(TAG, "Could not download updates list");
                 runOnUiThread(() -> {
                     if (!cancelled) {
-                        showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
+                        showSnackbar(R.string.snack_updates_server_down, Snackbar.LENGTH_LONG);
                     }
                     refreshAnimationStop();
                 });
@@ -347,7 +347,7 @@ public class UpdatesActivity extends UpdatesListActivity {
                     .build();
         } catch (IOException exception) {
             Log.e(TAG, "Could not build download client");
-            showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
+            showSnackbar(R.string.snack_updates_download_client, Snackbar.LENGTH_LONG);
             return;
         }
 
