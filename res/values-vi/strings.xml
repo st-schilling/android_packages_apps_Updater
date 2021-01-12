@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 The ArrowOS Project
+     Copyright (C) 2017 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,20 +15,33 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Trình cập nhật</string>
-    <string name="display_name">Trình cập nhật</string>
-    <string name="verification_failed_notification">Xác minh thất bại</string>
+    <string name="app_name">Cập nhật</string>
+    <string name="display_name">Cập nhật</string>
+    <!-- Directory where the update files will be downloaded and stored.
+         WARNING: The application can and will delete any unknown file. -->
+    <!-- Directory where the downloads will be exported to.
+         The path is relative to the root of the external storage.-->
+    <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {version} - Build version
+          {ziptype} - Build ziptype (vanilla/gapps)
+    -->
+    <string name="verification_failed_notification">Xác thực thất bại</string>
     <string name="verifying_download_notification">Đang xác thực bản cập nhật</string>
     <string name="downloading_notification">Đang tải xuống</string>
     <string name="download_paused_notification">Đã tạm dừng tải xuống</string>
     <string name="download_paused_error_notification">Lỗi tải xuống</string>
     <string name="download_completed_notification">Tải xuống hoàn tất</string>
-    <string name="download_starting_notification">Đang bắt đầu tải xuống</string>
-    <string name="update_failed_notification">Cập nhật thất bại</string>
-    <string name="new_updates_found_title">Bản cập nhật mới</string>
-    <string name="text_download_speed">%1$s, %2$s/giây</string>
+    <string name="download_starting_notification">Bắt đầu tải xuống</string>
+    <string name="update_failed_notification">Cập nhật không thành công</string>
+    <string name="installation_suspended_notification">Đã tạm hoãn cài đặt</string>
+    <string name="new_updates_found_title">Bản cập nhật mới!</string>
+    <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Tạm dừng</string>
     <string name="resume_button">Tiếp tục</string>
+    <string name="suspend_button">Tạm dừng</string>
     <string name="installing_update">Đang cài đặt gói cập nhật</string>
     <string name="installing_update_error">Lỗi cài đặt</string>
     <string name="installing_update_finished">Đã cài đặt bản cập nhật</string>
@@ -39,44 +52,61 @@
     <string name="dialog_battery_low_message_pct">Mức pin quá thấp, bạn cần tối thiểu <xliff:g id="percent_discharging">%1$d</xliff:g>%% pin để tiếp tục, <xliff:g id="percent_charging">%2$d</xliff:g>%% nếu đang sạc.</string>
     <string name="reboot">Khởi động lại</string>
     <string name="menu_refresh">Làm mới</string>
-    <string name="menu_preferences">Tùy chỉnh</string>
-    <string name="menu_auto_updates_check">Tự động kiểm tra bản cập nhật</string>
+    <string name="menu_preferences">Tùy chọn</string>
+    <string name="menu_auto_updates_check">Tự động kiểm tra cập nhật</string>
+    <string name="menu_auto_updates_check_interval_daily">Một lần một ngày</string>
+    <string name="menu_auto_updates_check_interval_weekly">Mỗi tuần một lần</string>
+    <string name="menu_auto_updates_check_interval_monthly">Mỗi tháng một lần</string>
+    <string name="menu_auto_updates_check_interval_never">Không bao giờ</string>
     <string name="menu_auto_delete_updates">Xóa bản cập nhật khi cài đặt hoàn tất</string>
-    <string name="menu_delete_update">Xóa</string>
+    <string name="menu_delete_update">Xóa</string>
     <string name="menu_copy_url">Sao chép URL</string>
     <string name="menu_export_update">Xuất bản cập nhật</string>
     <string name="menu_show_changelog">Hiển thị nhật ký thay đổi</string>
     <string name="menu_ab_perf_mode">Ưu tiên quá trình cập nhật</string>
-    <string name="snack_updates_found">Đã tìm thấy bản cập nhật mới</string>
+    <!-- Sourceforge mirrors -->
+    <string name="sf_dialog_title">Luồng tải xuống có sẵn</string>
+    <string name="menu_sf_mirrors">Luồng</string>
+    <string name="sf_mirror_preferences">Tùy chọn luồng</string>
+    <string name="rank_and_sort_mirrors">Xếp hạng và thứ tự luồng</string>
+    <string name="snack_updates_found">Tìm thấy cập nhật mới</string>
     <string name="snack_no_updates_found">Không tìm thấy bản cập nhật mới</string>
     <string name="snack_updates_check_failed">Kiểm tra bản cập nhật không thành công. Vui lòng kiểm tra kết nối internet của bạn và thử lại sau.</string>
+    <string name="snack_updates_server_down">Cổng kết nối bị lỗi, không thể kết nối với máy chủ. Vui lòng thử lại sau!</string>
+    <string name="snack_updates_download_client">Không thể bắt đầu tải xuống. RIP</string>
+    <string name="snack_ranking_sf_mirrors">Xếp hạng luồng SF. Vui lòng chờ!</string>
+    <string name="snack_fetching_sf_mirrors">Xếp hạng luồng SF. Vui lòng chờ!</string>
+    <string name="snack_failed_sf_mirrors">Không thể tìm nạp luồng SF.</string>
+    <string name="snack_fetched_sf_mirrors">Đã tìm nạp luồng SF. Đã xong!</string>
+    <string name="snack_set_sf_mirror">Luồng được đặt thành %1$s!</string>
+    <string name="snack_force_sf_mirror">Không tìm thấy gương %1$s đã chọn trước đó! Dự phòng về mặc định.</string>
     <string name="snack_download_failed">Tải xuống không thành công. Vui lòng kiểm tra kết nối internet của bạn và thử lại sau.</string>
     <string name="snack_download_verification_failed">Xác thực bản cập nhật thất bại.</string>
     <string name="snack_download_verified">Tải xuống hoàn tất.</string>
-    <string name="snack_update_not_installable">Bản cập nhật này không thể được cài đặt lên trên của bản xây dựng hiện hành.</string>
+    <string name="snack_update_not_installable">Bản cập nhật này không thể được cài đặt lên trên của bản xây dựng hiện tại.</string>
     <string name="header_title_text">ArrowOS\n%1$s</string>
     <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
     <string name="header_last_updates_check">Lần kiểm tra cuối: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
-    <string name="list_build_version">ArrowOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version">ArrowOS <xliff:g id="version" example="14.1">%1$s - </xliff:g></string>
     <string name="list_build_version_date">ArrowOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
     <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> của <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">Đang xác thực bản cập nhật</string>
-    <string name="list_no_updates">Không có bản cập nhật mới được tìm thấy. Để tự động kiểm tra các bản cập nhật mới, sử dụng nút Làm mới.</string>
+    <string name="list_no_updates">Không tìm thấy bản cập nhật mới. Để tự kiểm tra các bản cập nhật mới, sử dụng nút Làm mới.</string>
     <string name="action_download">Tải xuống</string>
     <string name="action_pause">Tạm dừng</string>
     <string name="action_resume">Tiếp tục</string>
     <string name="action_install">Cài đặt</string>
     <string name="action_info">Thông tin</string>
-    <string name="action_delete">Xóa</string>
-    <string name="action_cancel">Hủy</string>
+    <string name="action_delete">Xóa</string>
+    <string name="action_cancel">Hủy bỏ</string>
     <string name="confirm_delete_dialog_title">Xoá tập tin</string>
     <string name="confirm_delete_dialog_message">Xóa các tập tin cập nhật được chọn?</string>
-    <string name="apply_update_dialog_title">Áp dụng cập nhật</string>
-    <string name="apply_update_dialog_message">Bạn sắp nâng cấp lên <xliff:g id="update_name">%1$s</xliff:g>.\n\nNếu bạn chạm <xliff:g id="ok">%2$s</xliff:g>, thiết bị sẽ tự động khởi động lại trong chế độ phục hồi để cài đặt bản cập nhật.\n\nLưu ý: Tính năng này yêu cầu Bản Khôi Phục tương ứng hoặc các bản cập nhật sẽ cần phải được cài đặt thủ công.</string>
+    <string name="apply_update_dialog_title">Áp dụng bản cập nhật</string>
+    <string name="apply_update_dialog_message">Bạn sắp nâng cấp lên <xliff:g id="update_name">%1$s</xliff:g>.\n\nNếu bạn chạm <xliff:g id="ok">%2$s</xliff:g>, thiết bị sẽ tự động khởi động lại trong chế độ phục hồi để cài đặt bản cập nhật.\n\nLưu ý: Tính năng này yêu cầu một chế độ phục hồi tương thích hoặc các bản cập nhật sẽ cần phải được cài đặt thủ công.</string>
     <string name="apply_update_dialog_message_ab">Bạn sắp nâng cấp lên <xliff:g id="update_name">%1$s</xliff:g>.\n\nNếu bạn chạm <xliff:g id="ok">%2$s</xliff:g>, thiết bị sẽ bắt đầu cài đặt ở chế độ nền.\n\nSau khi hoàn tất, bạn sẽ được nhắc khởi động lại.</string>
     <string name="cancel_installation_dialog_message">Huỷ cài đặt?</string>
-    <string name="label_download_url">Tải xuống URL</string>
+    <string name="label_download_url">URL Tải xuống</string>
     <string name="toast_download_url_copied">Đã sao chép URL</string>
     <string name="dialog_export_title">Đang xuất bản cập nhật</string>
     <string name="notification_export_success">Đã xuất bản cập nhật</string>
@@ -92,13 +122,15 @@
         <item quantity="other">Còn lại <xliff:g id="count">%d</xliff:g> giờ</item>
     </plurals>
     <string name="update_on_mobile_data_title">Cảnh báo</string>
-    <string name="update_on_mobile_data_message">Bạn sắp tải xuống một gói cập nhật sử dụng dữ liệu di động có khả năng gây ra việc sử dụng dữ liệu cao. Bạn có muốn tiến hành không?</string>
-    <string name="checkbox_mobile_data_warning">Không hiện lại</string>
+    <string name="update_on_mobile_data_message">Bạn sắp tải xuống một gói cập nhật bằng dữ liệu di động, có khả năng gây ra việc sử dụng dữ liệu cao. Bạn có muốn tiến hành không?</string>
+    <string name="checkbox_mobile_data_warning">Không hiển thị lại</string>
     <string name="menu_mobile_data_warning">Cảnh báo dữ liệu di động</string>
     <string name="blocked_update_dialog_title">Cập nhật bị chặn</string>
-    <string name="blocked_update_dialog_message">Bản cập nhật này không thể được cài đặt bằng ứng dụng trình cập nhật. Vui lòng đọc <xliff:g id="info_url">%1$s</xliff:g> để biết thêm thông tin.</string>
+    <string name="blocked_update_dialog_message">Không thể cài đặt bản cập nhật này bằng ứng dụng trình cập nhật. Bạn có thể cần khôi phục cài đặt gốc (xóa tất cả dữ liệu) để cài đặt zip này. Vui lòng tải xuống và cài đặt zip theo cách thủ công. </string>
     <string name="export_channel_title">Hoàn thành xuất</string>
     <string name="new_updates_channel_title">Bản cập nhật mới</string>
-    <string name="ongoing_channel_title">Đang tải xuống</string>
-    <string name="update_failed_channel_title">Cập nhật thất bại</string>
+    <string name="ongoing_channel_title">Đang bắt đầu tải xuống</string>
+    <string name="update_failed_channel_title">Cập nhật không thành công</string>
+    <string name="arrowos_display_version">ArrowOS <xliff:g id="version">%1$s</xliff:g> | <xliff:g id="variant">%2$s</xliff:g></string>
+    <string name="build_info_card_title">Chi tiết về phiên bản hiện tại</string>
 </resources>

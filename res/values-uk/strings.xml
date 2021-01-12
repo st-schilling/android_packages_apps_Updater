@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 The ArrowOS Project
+     Copyright (C) 2017 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,6 +17,17 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Оновлення</string>
     <string name="display_name">Оновлення</string>
+    <!-- Directory where the update files will be downloaded and stored.
+         WARNING: The application can and will delete any unknown file. -->
+    <!-- Directory where the downloads will be exported to.
+         The path is relative to the root of the external storage.-->
+    <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {version} - Build version
+          {ziptype} - Build ziptype (vanilla/gapps)
+    -->
     <string name="verification_failed_notification">Не вдалося виконати перевірку</string>
     <string name="verifying_download_notification">Перевірка оновлення</string>
     <string name="downloading_notification">Завантаження</string>
@@ -24,28 +35,53 @@
     <string name="download_paused_error_notification">Помилка завантаження</string>
     <string name="download_completed_notification">Завантаження завершено</string>
     <string name="download_starting_notification">Початок завантаження</string>
+    <string name="update_failed_notification">Помилка оновлення</string>
+    <string name="installation_suspended_notification">Встановлення призупинено</string>
     <string name="new_updates_found_title">Нові оновлення</string>
-    <string name="text_download_speed">%1$s, %2$s/с</string>
-    <string name="pause_button">Пауза</string>
+    <string name="text_download_speed">%1$s, %2$s/сек</string>
+    <string name="pause_button">Призупинити</string>
     <string name="resume_button">Продовжити</string>
-    <string name="installing_update">Пакунок оновлення встановлюється</string>
+    <string name="suspend_button">Призупинити</string>
+    <string name="installing_update">Встановлення пакету оновлення</string>
     <string name="installing_update_error">Помилка встановлення</string>
     <string name="installing_update_finished">Оновлення встановлено</string>
     <string name="finalizing_package">Завершення встановлення</string>
     <string name="preparing_ota_first_boot">Підготовка до першого завантаження</string>
-    <string name="dialog_prepare_zip_message">Підготовка оновлення</string>
-    <string name="reboot">Перезавантаження</string>
-    <string name="menu_refresh">Оновити</string>
+    <string name="dialog_prepare_zip_message">Попередня підготовка до оновлення</string>
+    <string name="dialog_battery_low_title">Низький рівень заряду батареї</string>
+    <string name="dialog_battery_low_message_pct">Рівень заряду батареї занизький, для продовження необхідно принаймні <xliff:g id="percent_discharging">%1$d</xliff:g>%% заряду або <xliff:g id="percent_charging">%2$d</xliff:g>%% під час зарядки.</string>
+    <string name="reboot">Перевантажити</string>
+    <string name="menu_refresh">Обновити</string>
+    <string name="menu_preferences">Налаштування</string>
     <string name="menu_auto_updates_check">Автоматична перевірка оновлень</string>
-    <string name="menu_auto_delete_updates">Видалити файли оновлення після інсталяції</string>
+    <string name="menu_auto_updates_check_interval_daily">Один раз на день</string>
+    <string name="menu_auto_updates_check_interval_weekly">Один раз на тиждень</string>
+    <string name="menu_auto_updates_check_interval_monthly">Один раз на місяць</string>
+    <string name="menu_auto_updates_check_interval_never">Ніколи</string>
+    <string name="menu_auto_delete_updates">Видалити файли оновлення після установки</string>
     <string name="menu_delete_update">Видалити</string>
-    <string name="menu_copy_url">Копіювати URL</string>
-    <string name="menu_export_update">Експорт оновлення</string>
-    <string name="snack_updates_found">Знайдено оновлення</string>
+    <string name="menu_copy_url">Скопіювати посилання</string>
+    <string name="menu_export_update">Експортувати оновлення</string>
+    <string name="menu_show_changelog">Показати журнал змін</string>
+    <string name="menu_ab_perf_mode">Пріоритет процесу оновлення</string>
+    <!-- Sourceforge mirrors -->
+    <string name="sf_dialog_title">Доступні альтернативні сервери</string>
+    <string name="menu_sf_mirrors">Дзеркала</string>
+    <string name="sf_mirror_preferences">Налаштування дзеркал</string>
+    <string name="rank_and_sort_mirrors">Упорядкування та сортування дзеркал</string>
+    <string name="snack_updates_found">Доступні оновлення</string>
     <string name="snack_no_updates_found">Оновлень не знайдено</string>
-    <string name="snack_updates_check_failed">Перевірка оновлення не вдалася. Будь-ласка перевірте з’єднання з мережею і спробуйте ще раз.</string>
-    <string name="snack_download_failed">Завантаження оновлення не вдалось. Будь-ласка перевірте з’єднання з мережею і спробуйте ще раз.</string>
-    <string name="snack_download_verification_failed">Не пройшла перевірка оновлення.</string>
+    <string name="snack_updates_check_failed">Не вдалося перевірити оновлення. Будь-ласка, перевірте підключення до Інтернету і повторіть спробу пізніше.</string>
+    <string name="snack_updates_server_down">Помилкова шлюзу, не вдалося підключитися до сервера. Будь ласка, спробуйте ще раз пізніше!</string>
+    <string name="snack_updates_download_client">Не вдалося ініціалізувати клієнт завантаження</string>
+    <string name="snack_ranking_sf_mirrors">Упорядкування дзеркал sourceforge, зачекайте!</string>
+    <string name="snack_fetching_sf_mirrors">Отримання дзеркал sourceforge, зачекайте!</string>
+    <string name="snack_failed_sf_mirrors">Не вдалося отримати перелік дзеркал sourceforge.</string>
+    <string name="snack_fetched_sf_mirrors">Перелік дзеркал sourceforge отримано.</string>
+    <string name="snack_set_sf_mirror">Вибрано дзеркало %1$s!</string>
+    <string name="snack_force_sf_mirror">Дзеркало %1$s, вибране раніше, не знайдено! Встановлено параметр за замовчанням.</string>
+    <string name="snack_download_failed">Помилка завантаження. Будь ласка, перевірте з\'єднання з мережею і спробуйте знову.</string>
+    <string name="snack_download_verification_failed">Помилка перевірки оновлення.</string>
     <string name="snack_download_verified">Завантаження завершено.</string>
     <string name="snack_update_not_installable">Це оновлення не можна інсталювати на поточну збірку.</string>
     <string name="header_title_text">ArrowOS\n%1$s</string>
@@ -53,25 +89,57 @@
     <string name="header_last_updates_check">Остання перевірка: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">ArrowOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">ArrowOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> з <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> з <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">Перевірка оновлення</string>
     <string name="list_no_updates">Оновлень не знайдено. Щоб вручну перевірити наявність оновлень, натисніть кнопку Оновити.</string>
-    <string name="action_download">Завантажити</string>
+    <string name="action_download">Завантаження</string>
+    <string name="action_pause">Призупинити</string>
+    <string name="action_resume">Продовжити</string>
+    <string name="action_install">Встановити</string>
+    <string name="action_info">Інформація</string>
+    <string name="action_delete">Видалити</string>
+    <string name="action_cancel">Скасувати</string>
     <string name="confirm_delete_dialog_title">Видалити файл</string>
     <string name="confirm_delete_dialog_message">Видалити обраний файл оновлення?</string>
-    <string name="apply_update_dialog_title">Застосувати оновлення</string>
-    <string name="apply_update_dialog_message">Ви збираєтесь оновитись на <xliff:g id="update_name">%1$s</xliff:g>.\n\nЯкщо Ви натиснете <xliff:g id="ok">%2$s</xliff:g>, пристрій перезавантажиться у Recovery для встановлення.\n\nПримітка: ця функція потребує сумісне Recovery, в іншому випадку оновлення необхідно встановити вручну.</string>
-    <string name="apply_update_dialog_message_ab">Ви збираєтесь оновитись на <xliff:g id="update_name">%1$s</xliff:g>.\n\nЯкщо ви натиснети на <xliff:g id="ok">%2$s</xliff:g>, пристрій почне встановлення у фоновому режимі.\n\nПісля встановлення вам буде запропоновано перезавантажити пристрій.</string>
+    <string name="apply_update_dialog_title">Примінити оновлення</string>
+    <string name="apply_update_dialog_message">Ви збираєтесь оновитися до <xliff:g id="update_name">%1$s</xliff:g>.\n\nЯкщо ви натиснете <xliff:g id="ok">%2$s</xliff:g>, пристрій автоматично перезавантажиться в Recovery для встановлення оновлення.\n\nПримітка: ця функція вимагає сумісного Recovery, в іншому випаді оновлення необхідно буде встановити вручну.</string>
+    <string name="apply_update_dialog_message_ab">Ви збираєтесь оновитися до <xliff:g id="update_name">%1$s</xliff:g>.\n\nЯкщо ви натиснете <xliff:g id="ok">%2$s</xliff:g>, пристрій почне фонову установку.\n\nПо завершенню вам буде запропоновано перезавантажити пристрій.</string>
+    <string name="cancel_installation_dialog_message">Скасувати встановлення?</string>
     <string name="label_download_url">URL-адреса завантаження</string>
     <string name="toast_download_url_copied">URL-адресу скопійовано</string>
     <string name="dialog_export_title">Експорт оновлення</string>
     <string name="notification_export_success">Оновлення експортовано</string>
     <string name="notification_export_fail">Помилка експорту</string>
+    <string name="toast_already_exporting">Оновлення вже експортується</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">залишилась 1 секунда</item>
+        <item quantity="few">залишилось <xliff:g id="count">%d</xliff:g> секунд(и)</item>
+        <item quantity="many">залишилось <xliff:g id="count">%d</xliff:g> секунд(и)</item>
+        <item quantity="other">Залишилось <xliff:g id="count">%d</xliff:g> сек.</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">Залишилась 1 хвилина</item>
+        <item quantity="few">залишилось <xliff:g id="count">%d</xliff:g> хвилин(и)</item>
+        <item quantity="many">залишилось <xliff:g id="count">%d</xliff:g> хвилин(и)</item>
+        <item quantity="other">залишилось <xliff:g id="count">%d</xliff:g> хвилин(и)</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">залишилась 1 година</item>
+        <item quantity="few">залишилось <xliff:g id="count">%d</xliff:g> годин(и)</item>
+        <item quantity="many">залишилось <xliff:g id="count">%d</xliff:g> годин(и)</item>
+        <item quantity="other">залишилось <xliff:g id="count">%d</xliff:g> годин(и)</item>
+    </plurals>
     <string name="update_on_mobile_data_title">Попередження</string>
-    <string name="update_on_mobile_data_message">Ви збираєтесь завантажити пакет оновлень за допомогою мобільних даних, що ймовірно призведе до високого використання мобільного трафіку. Хочете продовжити?</string>
+    <string name="update_on_mobile_data_message">Ви збираєтеся завантажити пакет оновлення за допомогою мобільного інтернету, що, ймовірно, призведе до високого споживання трафіку. Бажаєте продовжити?</string>
     <string name="checkbox_mobile_data_warning">Не показувати знову</string>
     <string name="menu_mobile_data_warning">Попередження про мобільні дані</string>
-    <string name="blocked_update_dialog_title">Оновлення заблоковане</string>
-    <string name="blocked_update_dialog_message">Це оновлення не можна інсталювати за допомогою штатного оновлювача.  Будь ласка, прочитайте <xliff:g id="info_url">%1$s</xliff:g> для отримання додаткової інформації.</string>
+    <string name="blocked_update_dialog_title">Оновлення заблоковано</string>
+    <string name="blocked_update_dialog_message">Це оновлення не можна інсталювати за допомогою додатку для оновлення. Вам може бути потрібно повернутися до заводських налаштувань (повна очистка розділу data) для встановлення цього оновлення. Будь ласка, завантажте та встановіть zip файл вручну.</string>
+    <string name="export_channel_title">Експорт завершено</string>
     <string name="new_updates_channel_title">Нові оновлення</string>
     <string name="ongoing_channel_title">Поточні завантаження</string>
+    <string name="update_failed_channel_title">Помилка оновлення</string>
+    <string name="arrowos_display_version">ArrowOS <xliff:g id="version">%1$s</xliff:g> | <xliff:g id="variant">%2$s</xliff:g></string>
+    <string name="build_info_card_title">Поточна інформація про збірку</string>
 </resources>
